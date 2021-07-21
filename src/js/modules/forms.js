@@ -39,8 +39,8 @@ const forms = () => {
             arr[0].length > 6 ? dots = "..." : dots = ".";
             const name = arr[0].substring(0, 6) + dots + arr[1];
             item.previousElementSibling.textContent = name;
-        })
-    })
+        });
+    });
 
     form.forEach(item => {
         item.addEventListener('submit', (e) => {
@@ -58,7 +58,7 @@ const forms = () => {
             let statusImg = document.createElement('img');
             statusImg.setAttribute('src', message.spinner);
             statusImg.classList.add('animated', 'fadeInUp');
-            statusMessage.append(statusImg);
+            statusMessage.appendChild(statusImg);
 
             let textMessage = document.createElement('div');
             textMessage.textContent = message.loading;

@@ -56,7 +56,7 @@ const modals = () => {
             if (!display) {
                     document.querySelector(selector).style.display = "block";
                     document.body.style.overflow = 'hidden'; 
-                    const scroll = calcScroll();
+                    let scroll = calcScroll();
                     document.body.style.marginRight = `${scroll}px`;
             }
         }, time);
@@ -67,7 +67,7 @@ const modals = () => {
         div.style.width = '50px';
         div.style.height = '50px';
         div.style.overflowY = 'scroll';
-        div.style.visibility = 'hideen';
+        div.style.visibility = 'hidden';
 
         document.body.appendChild(div);
         let scrollWidth = div.offsetWidth - div.clientWidth;
@@ -81,7 +81,7 @@ const modals = () => {
             if (!btnPressed && (window.pageYOffset + document.documentElement.clientHeight >= scrollHeight)) {
                 document.querySelector(selector).click();
             }
-        })
+        });
     }
 
     bindModal('.button-design', '.popup-design', '.popup-design .popup-close');
